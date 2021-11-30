@@ -2,7 +2,7 @@
 : '
 Nvidia GTX 1660 S GPU için açık kaynak sürücü ile kapalı kaynak sürücü arasında geçiş yapmamı sağlayan Bash shell scriptim (CLI).
 	nvidia ile nouveau (xf86-video-nouveau) arasında köprü oluşturur.
-	nvidia-lts ile nouveau (xf86-video-nouveau) arasında oluşturur.
+	nvidia-lts ile nouveau (xf86-video-nouveau) arasında köprü oluşturur.
 		
 Creator: Fethi MADAN
 '
