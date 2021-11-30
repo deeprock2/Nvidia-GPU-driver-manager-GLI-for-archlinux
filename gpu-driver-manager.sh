@@ -8,7 +8,7 @@ Creator: Fethi MADAN
 '
 
 if [[ $(whoami) == "root" ]]; then
-	# < tekrarlayan yapı
+
 	file1="/usr/lib/modprobe.d/nvidia.conf"
 
 	if [ -s "$file1" ]; then 
@@ -51,11 +51,8 @@ if [[ $(whoami) == "root" ]]; then
 			echo "/usr/lib/modprobe.d/nvidia.conf dosyasını incele çünkü beklediğimden farklı içeriği var."
 		fi
 	fi
-	# tekrarlayan yapı / >
 
 
-
-	# < tekrarlayan yapı
 	file2="/usr/lib/modprobe.d/nvidia-lts.conf"
 
 	if [ -s "$file2" ];then 
@@ -97,7 +94,7 @@ if [[ $(whoami) == "root" ]]; then
 			echo "/usr/lib/modprobe.d/nvidia-lts.conf dosyasını incele çünkü beklediğimden farklı içeriği var."
 		fi
 	fi
-	# tekrarlayan yapı / >	
+
 else
 	echo "Lütfen, superuser (root) olarak programı çalıştırınız. "
 fi
