@@ -8,11 +8,10 @@ Creator: Fethi MADAN
 '
 
 if [[ $(whoami) == "root" ]]; then
-
-	file1="/usr/lib/modprobe.d/nvidia.conf"
+	file1="/usr/lib/modprobe.d/nvidia-utils.conf"
 
 	if [ -s "$file1" ]; then 
-	   nvidiaBlackListDurumu=`cat /usr/lib/modprobe.d/nvidia.conf | grep "blacklist nouveau"`
+	   nvidiaBlackListDurumu=`cat /usr/lib/modprobe.d/nvidia-utils.conf | grep "blacklist nouveau"`
 	   if [[ $nvidiaBlackListDurumu == "blacklist nouveau" ]]; then
 			echo "Şuan; nouveau (açık kaynak sürücü), $file1 dosyasındaki blacklist'tedir."
 			echo "Şuan, nvidia (kapalı kaynak sürücü) aktiftir."
@@ -26,7 +25,7 @@ if [[ $(whoami) == "root" ]]; then
 					echo "nouveau açık kaynak sürücüsünün aktif olması için reboot yapmak gerekiyor."
 					echo -n "Şimdi reboot yapılsın mı? [E/h] "
 					read responseForReboot
-					if [[ "$responseForReboot" == "e" || "$responseForReboot" == "evet" ]]; then
+					if [[ "$responseForReboot" == "e" || "$responseForReboot" == "E" || "$responseForReboot" == "evet" ]]; then
 						reboot
 					fi
 				fi
@@ -43,15 +42,14 @@ if [[ $(whoami) == "root" ]]; then
 					echo "nvidia kapalı kaynak sürücüsünün aktif olması için reboot yapmak gerekiyor."
 					echo -n "Şimdi reboot yapılsın mı? [E/h] "
 					read responseForReboot
-					if [[ "$responseForReboot" == "e" || "$responseForReboot" == "evet" ]]; then
+					if [[ "$responseForReboot" == "e" || "$responseForReboot" == "E" || "$responseForReboot" == "evet" ]]; then
 						reboot
 					fi
 				fi
 		else
-			echo "/usr/lib/modprobe.d/nvidia.conf dosyasını incele çünkü beklediğimden farklı içeriği var."
+			echo "/usr/lib/modprobe.d/nvidia-utils.conf dosyasını incele çünkü beklediğimden farklı içeriği var."
 		fi
 	fi
-
 
 	file2="/usr/lib/modprobe.d/nvidia-lts.conf"
 
@@ -70,7 +68,7 @@ if [[ $(whoami) == "root" ]]; then
 					echo "nouveau açık kaynak sürücüsünün aktif olması için reboot yapmak gerekiyor."
 					echo -n "Şimdi reboot yapılsın mı? [E/h] "
 					read responseForReboot
-					if [[ "$responseForReboot" == "e" || "$responseForReboot" == "evet" ]]; then
+					if [[ "$responseForReboot" == "e" || "$responseForReboot" == "E" || "$responseForReboot" == "evet" ]]; then
 						reboot
 					fi
 				fi
@@ -86,7 +84,7 @@ if [[ $(whoami) == "root" ]]; then
 					echo "nvidia-lts kapalı kaynak sürücüsünün aktif olması için reboot yapmak gerekiyor."
 					echo -n "Şimdi reboot yapılsın mı? [E/h] "
 					read responseForReboot
-					if [[ "$responseForReboot" == "e" || "$responseForReboot" == "evet" ]]; then
+					if [[ "$responseForReboot" == "e" || "$responseForReboot" == "E" || "$responseForReboot" == "evet" ]]; then
 						reboot
 					fi
 				fi
@@ -94,7 +92,6 @@ if [[ $(whoami) == "root" ]]; then
 			echo "/usr/lib/modprobe.d/nvidia-lts.conf dosyasını incele çünkü beklediğimden farklı içeriği var."
 		fi
 	fi
-
 else
 	echo "Lütfen, superuser (root) olarak programı çalıştırınız. "
 fi
