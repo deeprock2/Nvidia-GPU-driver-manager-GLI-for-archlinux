@@ -6,6 +6,7 @@ Archlinux distrolu işletim sistemimde Nvidia GTX 1660 S model bir ekran kartı 
 Grafikal arayüzü yoktur, terminal ile çalışır (CLI).
 
 
+
 Programın kulllanımı:
 
 gpu-driver-manager.sh dosyasını /usr/local/bin dizinine kaydedin.
