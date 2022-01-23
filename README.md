@@ -7,6 +7,7 @@ Grafikal arayüzü yoktur, terminal ile çalışır (CLI).
 
 
 Programın kulllanımı:
+
 gpu-driver-manager.sh dosyasını /usr/local/bin dizinine kaydedin.
 Terminalde aşağıdaki komut satırını çalıştırın.
 sudo gpu-driver-manager.sh 
